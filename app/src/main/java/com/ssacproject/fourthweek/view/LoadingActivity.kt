@@ -41,7 +41,6 @@ class LoadingActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         boardHelper = Room.databaseBuilder(this, RoomBoardHelper::class.java, "room_board3")
-            .allowMainThreadQueries()
             .build()
 
         binding.btnPlay.setOnClickListener {
@@ -131,12 +130,6 @@ class LoadingActivity : AppCompatActivity() {
         mediaPlayer.release()
     }
 
-    fun setSharedData(name: String, key: String, data: Int) {
-        val pref: SharedPreferences = getSharedPreferences(name, Activity.MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = pref.edit()
-        editor.putInt(key, data)
-        editor.apply()
-    }
     fun getSharedIntData(name: String, key: String) : Int {
         val pref: SharedPreferences = getSharedPreferences(name, Activity.MODE_PRIVATE)
         return pref.getInt(key, 0)

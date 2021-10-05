@@ -97,47 +97,11 @@ class MainActivity : Activity() {
         binding.container.addView(userView)
 
         setContentView(binding.root)
-
-        mDisplayListener = object: DisplayManager.DisplayListener {
-            override fun onDisplayAdded(p0: Int) {
-                Log.d("Rotation", "hi")
-            }
-
-            override fun onDisplayChanged(displayId: Int) {
-                val display: Display = (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
-                when(display.rotation) {
-                    Surface.ROTATION_0 -> {
-                        Log.d("Changed Rotation", "index = ${display.rotation}")
-                    }
-                    Surface.ROTATION_90 -> {
-                        Log.d("Changed Rotation", "index = ${display.rotation}")
-
-                    }
-                    Surface.ROTATION_180 -> {
-                        Log.d("Changed Rotation", "index = ${display.rotation}")
-
-                    }
-                    else -> {
-                        Log.d("Changed Rotation", "index = ${display.rotation}")
-
-                    }
-                }
-            }
-
-            override fun onDisplayRemoved(p0: Int) {
-            }
-        }
         displayManager = this.getSystemService(Context.DISPLAY_SERVICE) as DisplayManager
         displayManager!!.registerDisplayListener(mDisplayListener, Handler())
 
         currentMode = intent.getIntExtra("mode", 0)
         setMode(currentMode)
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        val orientation = newConfig.orientation
-
     }
 
     override fun onStart() {
@@ -178,8 +142,9 @@ class MainActivity : Activity() {
         val name = getSharedStringData("prefUserName", "userName")
         val score = getSharedIntData("prefScore", "score")
         val character = getSharedIntData("prefCharacter", "character")
+        val roomBoard = RoomBoard(null, name!!, character, score, mode)
         CoroutineScope(IO).launch {
-            boardHelper?.roomBoardDao?.insert(RoomBoard(null, name!!, character, score, mode))
+            boardHelper?.roomBoardDao?.insertSuspend(roomBoard)
         }
     }
 

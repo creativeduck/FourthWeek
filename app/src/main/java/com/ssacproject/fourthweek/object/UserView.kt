@@ -295,10 +295,6 @@ class UserView(
 
                 isTouched = true
                 pauseTouched(x, y)
-
-
-                Log.d("TIMEVIEW1", "${score}")
-
                 if (winFlag) {
                     // 게임승리
                     setSharedData("prefScore", "score", score)
@@ -316,21 +312,11 @@ class UserView(
                 }
                 // 게임 멈추었을 때
                 else if (!playFlag) {
-
-                    Log.d("TIMEVIEW7", "${score}")
-
                     // 게임오버되었을 때 물어봄
                     if (gameoverFlag) {
-
-                        Log.d("TIMEVIEW8", "${score}")
-
                         if (isOverlappedText((screenWidth / 2-45).toFloat(), (screenHeight / 2+90).toFloat(),
                                 x, y, 3, 1)) {
-
-                            Log.d("TIMEVIEW99", "${score}")
-
                             setSharedData("prefScore", "score",score)
-
                             val activity = context as Activity
                             activity.finish()
                         } else if (isOverlappedText((screenWidth / 2-130).toFloat(), (screenHeight / 2+90).toFloat(),
