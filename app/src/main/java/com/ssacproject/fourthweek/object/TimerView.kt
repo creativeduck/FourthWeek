@@ -1,10 +1,11 @@
-package com.ssacproject.fourthweek
+package com.ssacproject.fourthweek.`object`
 
 import android.app.Activity
 import android.content.Context
 import android.graphics.*
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import kotlin.concurrent.timerTask
 import kotlin.random.Random
@@ -13,15 +14,13 @@ class TimerView(
     context: Context,
     val screenWidth: Int,
     val screenHeight: Int) : View(context) {
-    var newWidth = 0
-    var newHeight = 0
 
-    lateinit var paint: Paint
+    var paint: Paint
     var score = 0
     var currentTile = 2
-    lateinit var mHandler: Handler
+    var mHandler: Handler
     var playFlag = true
-    lateinit var timetask: Runnable
+    var timetask: Runnable
 
     init {
         mHandler = Handler(Looper.getMainLooper())

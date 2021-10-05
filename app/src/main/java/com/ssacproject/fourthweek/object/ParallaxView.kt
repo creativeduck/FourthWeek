@@ -1,13 +1,10 @@
-package com.ssacproject.fourthweek
+package com.ssacproject.fourthweek.`object`
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.graphics.*
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.view.SurfaceHolder
 import android.view.SurfaceView
+import com.ssacproject.fourthweek.Background
 
 class ParallaxView(
     context: Context,

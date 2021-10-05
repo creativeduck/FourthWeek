@@ -1,16 +1,11 @@
-package com.ssacproject.fourthweek
+package com.ssacproject.fourthweek.`object`
 
-import android.app.Activity
 import android.content.Context
 import android.graphics.*
 import android.os.Handler
 import android.os.Looper
-import android.view.MotionEvent
-import android.view.SurfaceHolder
 import android.view.View
-import android.widget.Button
-import java.util.concurrent.ThreadLocalRandom
-import kotlin.random.Random
+import com.ssacproject.fourthweek.Background
 
 class BackgroundView(
     context: Context,

@@ -13,8 +13,8 @@ class Background(
     sY: Int,
     eY: Int,
     s: Float) {
-    lateinit var bitmap: Bitmap
-    lateinit var bitmapReserved: Bitmap
+    var bitmap: Bitmap
+    var bitmapReserved: Bitmap
     var width: Int = 0
     var height: Int = 0
     var reversedFirst: Boolean = false
@@ -48,7 +48,6 @@ class Background(
 
     fun update(fps: Long) {
         xClip -= (speed/fps).toInt()
-//        xClip -= 7
         if (xClip >= width) {
             xClip = 0
             reversedFirst = !reversedFirst

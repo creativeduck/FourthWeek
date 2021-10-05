@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:drawable="@color/gray"/>
+    <item android:drawable="@color/black"/>
+    <item android:drawable="@drawable/rabbit_down"
+        android:width="100dp" android:height="100dp"
+
+        android:start="300dp"
+        android:gravity="center"
+        />
+    <item android:drawable="@drawable/fly1"
+        android:width="100dp" android:height="100dp"
+        android:start="130dp"
+        android:gravity="center"
+        />
+
+    <item android:drawable="@drawable/pig1"
+        android:width="100dp" android:height="100dp"
+
+        android:start="-80dp"
+        android:gravity="center"
+        />
+
+    <item android:drawable="@drawable/ghost6"
+        android:width="100dp" android:height="100dp"
+        android:start="-300dp"
+        android:gravity="center"
+        />
+
 </layer-list>

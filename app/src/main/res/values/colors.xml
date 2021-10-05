@@ -10,4 +10,7 @@
     <color name="gray">#FF979797</color>
     <color name="godong">#FF605944</color>
     <color name="white_gray">#CCD8D8D8</color>
+    <color name="orange">#FFF34610</color>
+    <color name="android">#FF5DE362</color>
+    <color name="main_black">#66000000</color>
 </resources>

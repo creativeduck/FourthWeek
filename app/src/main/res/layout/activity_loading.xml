@@ -5,45 +5,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
-    tools:context=".LoadingActivity">
+    tools:context=".view.LoadingActivity">
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안광민"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_margin="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
 
     <ImageView
-        android:id="@+id/rabbitLoading"
+        android:id="@+id/characterLoading"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/rabbit_down"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.819" />
 
-    <Button
-        android:id="@+id/btnPlay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="116dp"
-        android:background="#D5BF06"
-        android:padding="22dp"
-        android:text="Play"
-        android:textColor="@color/white"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCustom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnCustom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
-        android:background="#FF468A49"
-        android:padding="22dp"
-        android:text="Custom"
-        android:textColor="@color/white"
-        android:textSize="50sp"
+    <LinearLayout
+        android:id="@+id/loading_linear"
+        android:layout_width="230dp"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/mode_linear_shape"
+        android:padding="10dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnPlay" />
+        app:layout_constraintTop_toTopOf="parent">
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="Play"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:background="@drawable/mode_btn_shape"
+            android:backgroundTintMode="src_in"
+            android:backgroundTint="#DDEDD711" />
+
+        <Button
+            android:id="@+id/btnBoard"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="Board"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/mode_btn_shape"
+            android:backgroundTintMode="src_in"
+            android:backgroundTint="#DDEDD711" />
+
+        <Button
+            android:id="@+id/btnCustom"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="CHARACTER"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:background="@drawable/mode_btn_shape"
+            android:backgroundTintMode="src_in"
+            android:backgroundTint="#DDEDD711" />
+
+
+    </LinearLayout>
 
     <ImageButton
         android:id="@+id/btnSoundControl"

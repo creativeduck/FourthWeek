@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/ic_baseline_pause_circle_outline_24.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/ic_mute.xml" value="0.22135416666666666" />
@@ -10,11 +11,25 @@
         <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/ic_rabbit_down.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/ic_rabbit_up.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/icon_2048_shape.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/mode_btn_shape.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/mode_linear_shape.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/mode_linear_shape_no_stroke.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/mode_linear_shape_selected.xml" value="0.39479166666666665" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/rabbit_shape.xml" value="0.18796296296296297" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/splash_shape.xml" value="0.18796296296296297" />
         <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/drawable/two.xml" value="0.38229166666666664" />
-        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/activity_board.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/activity_board.xml" value="0.33" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/activity_choose_level.xml" value="0.33" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/activity_custom.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/activity_loading.xml" value="0.33" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/activity_name.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/activity_splash.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/btn.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/item_board.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/fragment_easy.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/fragment_mode.xml" value="0.1" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/item_board.xml" value="0.5" />
+        <entry key="..\:/Users/User/Desktop/SSAC/FourthWeek/FourthWeek/app/src/main/res/layout/main_gameover.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>
@@ -23,5 +38,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.36614583333333334" />
+      </ProjectState>
+    </option>
   </component>
 </project>
