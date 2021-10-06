@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="roundedCorners" parent="">
+        <item name="cornerSize">32%</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="strokeColor">@color/gray</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="roundedLittleCorners" parent="">
+        <item name="cornerSize">15%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+</resources>

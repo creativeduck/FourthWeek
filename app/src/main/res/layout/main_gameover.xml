@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/main_black">
+
+    <TextView
+        android:id="@+id/gameover_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="게임오버"
+        android:textSize="60sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/gameover_ask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다시 하시겠습니까?"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gameover_title"/>
+    <TextView
+        android:id="@+id/gameover_yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="네"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gameover_no"
+        app:layout_constraintTop_toBottomOf="@+id/gameover_ask"/>
+    <TextView
+        android:id="@+id/gameover_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아니오"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/gameover_yes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameover_ask"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
