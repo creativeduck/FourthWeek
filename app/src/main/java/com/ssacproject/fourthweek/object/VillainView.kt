@@ -43,6 +43,8 @@ class VillainView(
     var runnable: Runnable
     var mHandler: Handler
 
+    var onPlaying = true
+
     init {
         fire = BitmapFactory.decodeResource(resources, R.drawable.fire)
         flame = BitmapFactory.decodeResource(resources, R.drawable.flame_effect)
@@ -53,7 +55,8 @@ class VillainView(
         mHandler = Handler(Looper.getMainLooper())
         runnable = object : Runnable {
             override fun run() {
-                invalidate()
+                if (onPlaying)
+                    invalidate()
             }
         }
     }
@@ -94,6 +97,9 @@ class VillainView(
             mHandler.postDelayed(runnable, UPDATE_MILLIS.toLong())
         }
     }
-
+    fun retry() {
+        onPlaying = true
+        mHandler.postDelayed(runnable, UPDATE_MILLIS.toLong())
+    }
 
 }

@@ -8,6 +8,13 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import com.ssacproject.fourthweek.R
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlin.coroutines.coroutineContext
 import kotlin.random.Random
 
 class HeartView(
@@ -36,6 +43,8 @@ class HeartView(
     var runnable: Runnable
     var mHandler: Handler
 
+    var onPlaying = true
+
     init {
         heart = BitmapFactory.decodeResource(resources, R.drawable.heart)
         flame = BitmapFactory.decodeResource(resources, R.drawable.flame_effect)
@@ -47,7 +56,8 @@ class HeartView(
         mHandler = Handler(Looper.getMainLooper())
         runnable = object : Runnable {
             override fun run() {
-                invalidate()
+                if (onPlaying)
+                    invalidate()
             }
         }
     }
@@ -79,14 +89,27 @@ class HeartView(
             mHandler.postDelayed(runnable, UPDATE_MILLIS.toLong())
         }
     }
-    fun overlaped() {
-        overlapedFlag = true
-        heartNum += 1
-        mHandler.postDelayed(runnable, 70.toLong())
+
+    fun overlaped(flag: Boolean) {
+        synchronized(this) {
+            overlapedFlag = flag
+            if (flag) {
+                heartNum += 1
+                mHandler.postDelayed(runnable, 70.toLong())
+            }
+            else {
+                heartNum -= 1
+                mHandler.postDelayed(runnable, 70.toLong())
+            }
+        }
     }
 
     fun dead() {
         heartNum -= 1
         mHandler.postDelayed(runnable, 70.toLong())
+    }
+    fun retry() {
+        onPlaying = true
+        mHandler.postDelayed(runnable, UPDATE_MILLIS.toLong())
     }
 }

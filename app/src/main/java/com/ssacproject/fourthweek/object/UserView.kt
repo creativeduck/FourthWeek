@@ -28,12 +28,15 @@ class UserView(
     val timer: TimerView,
     val upgrade: UpgradeView,
     val target: TargetView,
-    val character: Int
+    val character: Int,
+    val parallaxView : ParallaxView
 ) : View(context) {
 
     companion object {
         const val ONE_LETTER = 65
         const val UPDATE_MILLIS = 70
+        const val PLUS_HEART = true
+        const val MINUS_HEART = false
     }
 
     var newWidth = 0
@@ -203,12 +206,13 @@ class UserView(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         if (winFlag) {
-            paint.textSize = 120f
-            canvas.drawText("게임에 승리하셨습니다", (screenWidth / 2-530).toFloat(), (screenHeight / 2-50).toFloat(), paint);
-            paint.textSize = 60f
-            canvas.drawText("다시 시작하시겠습니까?", (screenWidth / 2-300).toFloat(), (screenHeight / 2+40).toFloat(), paint);
-            canvas.drawText("네", (screenWidth / 2-130).toFloat(), (screenHeight / 2+115).toFloat(), paint);
-            canvas.drawText("아니요", (screenWidth / 2-45).toFloat(), (screenHeight / 2+115).toFloat(), paint);
+            drawGameWin(canvas, paint)
+//            paint.textSize = 120f
+//            canvas.drawText("게임에 승리하셨습니다", (screenWidth / 2-530).toFloat(), (screenHeight / 2-50).toFloat(), paint);
+//            paint.textSize = 60f
+//            canvas.drawText("다시 시작하시겠습니까?", (screenWidth / 2-300).toFloat(), (screenHeight / 2+40).toFloat(), paint);
+//            canvas.drawText("네", (screenWidth / 2-130).toFloat(), (screenHeight / 2+115).toFloat(), paint);
+//            canvas.drawText("아니요", (screenWidth / 2-45).toFloat(), (screenHeight / 2+115).toFloat(), paint);
         } else {
             if (playFlag) {
                 canvas.drawBitmap(pause, (screenWidth-120).toFloat(), 60f, null)
@@ -362,17 +366,16 @@ class UserView(
         return bitmap
     }
 
-    fun heartChange() {
-        if (heart.heartNum > 1) {
-            heart.dead()
-        } else {
-            playFlag = false
-            gameoverFlag = true
-            timer.playFlag = playFlag
-//            timer.score = 0
+    fun heartChange(flag: Boolean) {
+        // 일단 하트 처리는 해주기
+        if (flag == MINUS_HEART && heart.heartNum <= 1) {
+            playFlag = false            // UserView 플래그
+            gameoverFlag = true         // UserView 플래그
+            timer.playFlag = playFlag   // TimerView 플래그
             setBackgroundColor(Color.parseColor("#66000000"))
             rabbitHandler.postDelayed(runnable, UPDATE_MILLIS.toLong())
         }
+        heart.overlaped(flag)
     }
     fun restart() {
         // 타이머 재작동
@@ -402,13 +405,13 @@ class UserView(
             if (isOverlapped(curX, curY, villan.curXList[i], villan.curYList[i])) {
                 startSound(fireHitSoundId)
                 villan.crashed(i)
-                heartChange()
+                heartChange(MINUS_HEART)
             }
         }
         // 하트를 먹었을 때
         if (isOverlapped(curX, curY, heart.curX, heart.curY)) {
             startSound(gainHeartSoundId)
-            heart.overlaped()
+            heartChange(PLUS_HEART)
         }
         // 업그레이드 아이템 먹었을 때
         if (isOverlapped(curX, curY, upgrade.curX, upgrade.curY)) {
@@ -449,5 +452,13 @@ class UserView(
                 setBackgroundColor(Color.TRANSPARENT)
             }
         }
+    }
+    fun drawGameWin(canvas: Canvas, paint: Paint) {
+        paint.textSize = 120f
+        canvas.drawText("게임에 승리하셨습니다", (screenWidth / 2-530).toFloat(), (screenHeight / 2-50).toFloat(), paint);
+        paint.textSize = 60f
+        canvas.drawText("다시 시작하시겠습니까?", (screenWidth / 2-300).toFloat(), (screenHeight / 2+40).toFloat(), paint);
+        canvas.drawText("네", (screenWidth / 2-130).toFloat(), (screenHeight / 2+115).toFloat(), paint);
+        canvas.drawText("아니요", (screenWidth / 2-45).toFloat(), (screenHeight / 2+115).toFloat(), paint);
     }
 }

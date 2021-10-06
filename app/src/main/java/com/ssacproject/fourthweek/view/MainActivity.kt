@@ -26,16 +26,10 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
 class MainActivity : Activity() {
-//    lateinit var job: Job
-
-    val WIDTH = 2160
-    val HEIGHT = 1080
-
     lateinit var binding: ActivityMainBinding
     lateinit var parallaxView: ParallaxView
     lateinit var userView: UserView
     lateinit var villianView: VillainView
-    lateinit var backgroundView: BackgroundView
     lateinit var heartView: HeartView
     lateinit var timerView: TimerView
     lateinit var upgradeView: UpgradeView
@@ -92,18 +86,47 @@ class MainActivity : Activity() {
         val character = getSharedIntData("prefCharacter", "character")
         // 주인공 추가
         userView = UserView(this, width, height, villianView, heartView, timerView,
-                            upgradeView, targetView, character)
+                            upgradeView, targetView, character, parallaxView)
         userView.setBackgroundColor(Color.TRANSPARENT)
         binding.container.addView(userView)
 
         setContentView(binding.root)
+
+        mDisplayListener = object: DisplayManager.DisplayListener {
+            override fun onDisplayAdded(p0: Int) {
+                Log.d("Rotation", "hi")
+            }
+
+            override fun onDisplayChanged(displayId: Int) {
+                val display: Display = (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
+                when(display.rotation) {
+                    Surface.ROTATION_0 -> {
+                        Log.d("Changed Rotation", "index = ${display.rotation}")
+                    }
+                    Surface.ROTATION_90 -> {
+                        Log.d("Changed Rotation", "index = ${display.rotation}")
+
+                    }
+                    Surface.ROTATION_180 -> {
+                        Log.d("Changed Rotation", "index = ${display.rotation}")
+
+                    }
+                    else -> {
+                        Log.d("Changed Rotation", "index = ${display.rotation}")
+
+                    }
+                }
+            }
+
+            override fun onDisplayRemoved(p0: Int) {
+            }
+        }
         displayManager = this.getSystemService(Context.DISPLAY_SERVICE) as DisplayManager
         displayManager!!.registerDisplayListener(mDisplayListener, Handler())
 
         currentMode = intent.getIntExtra("mode", 0)
         setMode(currentMode)
     }
-
     override fun onStart() {
         super.onStart()
         mediaPlayer = MediaPlayer.create(this, R.raw.bgm_main)
