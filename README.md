@@ -1,5 +1,5 @@
-## 👋 게임 앱 제작
-[Notion](https://www.notion.so/Wavve-a24bac0f7c8348cab4583ec5742de9a9)   
+## 👋 RabbitRun 게임
+[Notion](https://www.notion.so/softsquared/RabbitRun-9cf42cab92f84557840854c13597e43d)   
 <img width="690" alt="asdf" src="https://user-images.githubusercontent.com/89892954/136993650-6aff0cf0-ff5a-4430-a0bb-b5b9fa05c1ff.png">   
 ### 🛠 기능
 + 배경음악 On/Off 기능
