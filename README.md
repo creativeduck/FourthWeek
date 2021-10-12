@@ -1,5 +1,5 @@
 ## 👋 RabbitRun 게임
-[Notion](https://www.notion.so/softsquared/RabbitRun-9cf42cab92f84557840854c13597e43d)   
+[Notion](https://www.notion.so/RabbitRun-38365cd8a7b44be1bae2e980901a56cd)   
 <img width="690" alt="asdf" src="https://user-images.githubusercontent.com/89892954/136998941-a4436c13-6380-4caa-8f99-1c153714d050.png">   
 ### 🛠 기능
 + 배경음악 On/Off 기능
